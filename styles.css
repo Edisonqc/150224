@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* 100% de la altura de la ventana */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    background-color: black; /* Fondo negro */
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.galaxy-bg {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    flex-direction: column;
+    text-align: center;
+    width: 100%; /* Ancho completo de la pantalla */
+    height: 100%; /* Altura completa de la pantalla */
+}
+
+.login-screen, .main-content {
+    width: 80%; /* Ancho relativo */
+    max-width: 1000px; /* Ancho máximo */
+    padding: 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.titulo {
+    margin-top: -28%;
+}
+
+h1, h2 {
+    /* margin-top: -28%; */
+    font-size: 4rem; /* Títulos grandes */
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 2rem; /* Tamaño de texto grande */
+    margin-bottom: 40px;
+    margin-top: -1%;
+}
+
+input {
+    font-size: 1.5rem;
+    padding: 15px;
+    margin-bottom: 30px;
+    width: 70%;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: white;
+}
+
+button {
+    font-size: 2rem; /* Botones grandes */
+    padding: 20px 40px;
+    margin: 15px;
+    border-radius: 12px;
+    background-color: #ff007f; /* Color de fondo */
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3399; /* Hover */
+}
+
+.question {
+    margin-top: 70px;
+}
+
+.answer-btn {
+    font-size: 2.5rem; /* Botones de respuesta grandes */
+    padding: 25px 50px;
+    margin: 20px;
+    background-color: #ff007f;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color: #ff3399;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.star {
+    position: absolute;
+    width: 5px; /* Tamaño de las estrellas */
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.meteor {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    animation: meteor 1.5s linear infinite;
+}
+
+@keyframes meteor {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(500px) translateX(500px); /* Movimiento del meteorito */
+    }
+}
+
+/* Animación de zoom en la imagen */
+img {
+    position: absolute;
+    /* top: 20%; */
+    max-width: 300px;
+    animation: zoomIn 1.5s ease-out forwards;
+}
+
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8); /* Empieza más pequeña */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); /* Termina en su tamaño original */
+        opacity: 1;
+    }
+}
+
+/* Estilo del botón */
+button {
+    font-size: 2rem; /* Botón grande */
+    padding: 20px 40px;
+    margin: 15px;
+    border-radius: 12px;
+    background-color: #ff007f; /* Color de fondo */
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease; /* Transición de todos los efectos */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Sombra sutil */
+}
+
+button:hover {
+    background-color: #ff3399; /* Cambio de color al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5); /* Sombra más intensa */
+}
+
+button:active {
+    transform: scale(1); /* Vuelve al tamaño original cuando se hace clic */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3); /* Sombra menos intensa al hacer clic */
+}
+
+
+
+.lyrics-container {
+    position: fixed;
+    bottom: -1%; /* Posición 20px desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    color: white; /* Color de la letra */
+    font-size: 2.5rem; /* Tamaño de la letra */
+    text-align: center; /* Centra el texto */
+    z-index: 1000; /* Asegura que la letra esté sobre otros elementos */
+    max-width: 80%; /* Limita el ancho máximo del texto */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+
+
+/* ////////////////////////////////////////////////// */
+
+.flower-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 0;
+    background-color: red;
+    border-radius: 50%;
+    animation: grow 3s ease-out forwards, move 10s infinite linear;
+}
+
+@keyframes grow {
+    0% {
+        height: 0;
+        transform: scale(1);
+    }
+    100% {
+        height: 50px; /* Altura máxima de la flor */
+        transform: scale(1.5); /* Crece un poco más al final */
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-80vh); /* Mueve la flor hacia arriba */
+    }
+}
+
+
+/* ////////////////////////////////////////////////// */
+
+
+
+#lyrics {
+    font-family: 'sacramento', cursive;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.img2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+    margin-bottom: 100px;
+    margin-left: 25%;
+}

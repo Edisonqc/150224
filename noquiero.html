@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡No me dejes! 😂</title>
+    <!-- Enlace directo al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="galaxy-bg">
+    <div class="content">
+        <h1>¿De verdad no quieres ser mi San Valentín?</h1>
+        <p>¡No te preocupes, aún te quiero mucho! ❤️</p>
+        <!-- Ruta directa a la imagen -->
+        <img src="peach-goma.gif" class="img2" alt="Meme gracioso" style="width: 80%; max-width: 500px;" />
+        <!-- <img src="meme-2024.jpg" alt="Meme gracioso" style="width: 80%; max-width: 500px;" /> -->
+        <!-- button id="back-btn" onclick="window.location.href='index.html'">Volver a la página inicial</button> -->
+    </div>
+
+    <script>
+        // Crear estrellas dinámicamente
+        function createStars(numStars) {
+            const starsContainer = document.createElement('div');
+            starsContainer.classList.add('stars');
+    
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Posicionar aleatoriamente las estrellas en la pantalla
+                const xPos = Math.random() * window.innerWidth;
+                const yPos = Math.random() * window.innerHeight;
+                const delay = Math.random() * 3 + 's';
+                
+                star.style.left = `${xPos}px`;
+                star.style.top = `${yPos}px`;
+                star.style.animationDelay = delay;
+    
+                starsContainer.appendChild(star);
+            }
+    
+            document.body.appendChild(starsContainer);
+        }
+    
+        // Crear estrellas fugaces
+        function createMeteors(numMeteors) {
+            for (let i = 0; i < numMeteors; i++) {
+                const meteor = document.createElement('div');
+                meteor.classList.add('meteor');
+    
+                // Posicionar aleatoriamente las estrellas fugaces
+                const xPos = Math.random() * window.innerWidth;
+                const yPos = Math.random() * window.innerHeight;
+    
+                meteor.style.left = `${xPos}px`;
+                meteor.style.top = `${yPos}px`;
+    
+                // Añadir el meteor al cuerpo del documento
+                document.body.appendChild(meteor);
+    
+                // El meteor se mueve de izquierda a derecha y arriba a abajo
+                setTimeout(() => {
+                    meteor.remove();  // Elimina el meteor al finalizar su animación
+                }, 1500);  // Duración de la animación (1.5s)
+            }
+        }
+    
+        // Crear 100 estrellas normales y 10 meteoros
+        createStars(100);
+        setInterval(() => createMeteors(10), 1000); // Cada 1 segundo, generamos 10 meteoros
+    </script>
+    
+    <!-- Enlace directo al archivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>
